@@ -10,14 +10,15 @@ pipeline {
             when {
              
                 branch 'master'
+            }  
+               
                 
-                bat 'java -version'
-                echo "I am in when"
                 
-                
-            }
+            
             
               steps {
+                   bat 'java -version'
+                echo "I am in when"
                 bat 'java -version'
             }
             
@@ -30,6 +31,6 @@ pipeline {
             steps {
                 bat 'go env'
             }
-        }
-    }
+        }  
+    
 }
