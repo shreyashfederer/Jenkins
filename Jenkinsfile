@@ -6,9 +6,7 @@ pipeline {
     
         
         stage('check java version') {
-            steps {
-                bat 'java -version'
-            }
+          
             when {
              
                 branch 'master'
@@ -17,6 +15,10 @@ pipeline {
                 echo "I am in when"
                 
                 
+            }
+            
+              steps {
+                bat 'java -version'
             }
             
             steps {
