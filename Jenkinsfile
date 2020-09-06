@@ -1,36 +1,20 @@
 pipeline {
     agent any
-    
-    
-
-    
-        
-        stage('check java version') {
-          
-            when {
-             
-                branch 'master'
-            }  
-               
-                
-                
-            
-            
-              steps {
-                   bat 'java -version'
-                echo "I am in when"
+    stages {
+        stage('Example Build') {
+            steps {
+                echo 'Hello World'
                 bat 'java -version'
             }
-            
-            steps {
-                echo "I am not in in when"
-            }
         }
-        
-        stage('check golang environment') {
+        stage('Example Deploy') {
+            when {
+                branch 'production'
+            }
             steps {
+                echo 'Deploying'
                 bat 'go env'
             }
-        }  
-    
+        }
+    }
 }
