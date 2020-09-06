@@ -6,9 +6,9 @@ pipeline {
     }
 
     stages {
-        stage('Hello') {
+        stage('check maven version') {
             steps {
-                echo 'Hello World'
+                bat 'mvn --version'
             }
         }
         
