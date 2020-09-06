@@ -13,5 +13,11 @@ pipeline {
                 bat 'java -version'
             }
         }
+        
+        stage('check golang environment') {
+            steps {
+                bat 'go env'
+            }
+        }
     }
 }
